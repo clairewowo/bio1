@@ -29,4 +29,4 @@ def freq_words(file_name):
 			output += word + ' '
 		print(output)
 
-freq_words('dataset.txt')
+freq_words('datasets/quiz1.txt')
