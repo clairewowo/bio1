@@ -20,6 +20,9 @@ def distance(kmer, text):
 			distance += 1
 	return distance
 
+print(distance('CTACAGCAATACGATCATATGCGGATCCGCAGTGGCCGGTAGACACACGT', 
+	'CTACCCCGCTGCTCAATGACCGGGACTAAAGAGGCGAAGATTATGGTGTG'))
+
 """
 finds the indexes of approximate matches of a kmer. 
 kmer is the first line of the file, second line is the text, 
@@ -41,5 +44,5 @@ def num_matches(filename):
 
 		return count
 
-print(num_matches('datasets/count.txt'))
+#print(num_matches('datasets/count.txt'))
 
