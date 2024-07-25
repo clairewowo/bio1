@@ -1,21 +1,35 @@
+
+nucl = ['A', 'T', 'C', 'G']
+def distance(str1, str2):
+	distance = 0
+	for i in range(len(str2)):
+		if str1[i] != str2[i]:
+			distance += 1
+	if len(str2) < len(str1):
+		distance += len(str1) - len(str2)
+	return distance
+
 def neighbors(string, d):
 	if d == 0:
-		return string
+		return [string]
 	if len(string) == 1:
 		return nucl # A, T, C, G
-	neighbors = []
+	neighbor = []
+	first = string[0]
 	suffix = string[1:]
 	suffixes = neighbors(suffix, d)
 	for text in suffixes:
 		if distance(suffix, text) < d:
 			for n in nucl:
-				neighbors.append(n + text)
+				neighbor.append(n + text)
 		else:
-			neighbors.append(string[0] + text)
+			neighbor.append(first + text)
 	
-	output = ""
-	for n in neighbors:
-		output += n + ' '
-	return output
+	return neighbor
 
-print(neighbors('ACG', 1))
+l = neighbors('ACG', 1)
+output = ""
+
+for n in l:
+	output += n + ' '
+print(output)
