@@ -32,6 +32,8 @@ public class Main {
                 RandomSearch rSearch = new RandomSearch(k, t, sequences);
                 int min = k * t;
                 String[] best = new String[]{};
+
+                // perform 1000 random searches and see which one is the best
                 for (int i = 0; i < 1000; i++) {
                     String[] motifs = rSearch.search();
                     int score = rSearch.score(motifs);
